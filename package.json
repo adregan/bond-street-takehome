@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/adregan/bond-street-takehome/issues"
   },
-  "homepage": "https://github.com/adregan/bond-street-takehome#readme"
+  "homepage": "https://github.com/adregan/bond-street-takehome#readme",
+  "dependencies": {
+    "whatwg-fetch": "^0.11.0"
+  }
 }
