@@ -9,6 +9,7 @@
     "html": "cp html/index.html dist/index.html",
     "prejs": "eslint js",
     "js": "browserify -t babelify js/index.js > dist/static/index.js",
+    "css": "sassc --style compressed scss/main.scss | postcss --use autoprefixer > dist/static/index.css",
     "vendor": "cp node_modules/whatwg-fetch/fetch.js dist/static/fetch.js",
     "assets": "cp -r assets/* dist/static",
     "prebuild": "npm run directories",
