@@ -4,7 +4,13 @@
   "description": "A takehome tech screen from Bond Street",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "directories": "mkdir -p dist/static",
+    "html": "cp html/index.html dist/index.html",
+    "vendor": "cp node_modules/whatwg-fetch/fetch.js dist/static/fetch.js",
+    "prebuild": "npm run directories",
+    "build": "npm run html; npm run vendor",
+    "serve": "cd dist; http-server -p 8001 -c-1"
   },
   "repository": {
     "type": "git",
