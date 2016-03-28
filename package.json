@@ -8,8 +8,9 @@
     "directories": "mkdir -p dist/static",
     "html": "cp html/index.html dist/index.html",
     "vendor": "cp node_modules/whatwg-fetch/fetch.js dist/static/fetch.js",
+    "assets": "cp -r assets/* dist/static",
     "prebuild": "npm run directories",
-    "build": "npm run html; npm run vendor",
+    "build": "npm run html; npm run vendor; npm run assets",
     "serve": "cd dist; http-server -p 8001 -c-1"
   },
   "repository": {
