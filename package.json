@@ -1,0 +1,19 @@
+{
+  "name": "bond-street-takehome",
+  "version": "1.0.0",
+  "description": "A takehome tech screen from Bond Street",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adregan/bond-street-takehome.git"
+  },
+  "author": "Duncan Regan",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/adregan/bond-street-takehome/issues"
+  },
+  "homepage": "https://github.com/adregan/bond-street-takehome#readme"
+}
