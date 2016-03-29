@@ -5,7 +5,7 @@ class Modal extends React.Component {
     super(props);
   }
   render () {
-    const { state, error, loading } = this.prpos;
+    const { state, error, loading } = this.props;
     const title = (state === 'login') ? 'Log in to your bank account' : 'Enter your routing and account numbers';
     return (
       <div className="modal-container">
@@ -14,10 +14,10 @@ class Modal extends React.Component {
             <h2 className="modal__title">{title}</h2>
             <p className="modal__description">Enter your credentials to link your account</p>
           </header>
-          <form className="modal__form">
+          <form className="modal__form" onSubmit={(e) => e.preventDefault()}>
+            {(error !== '') ? <p className="modal__error">{error}</p> : null}
             <input className="modal__input" />
-            <input className="modal__input" />
-            <button type="submit" className="modal__submit"/>
+            <button type="submit" className="modal__submit">Continue</button>
           </form>
         </article>
       </div>
