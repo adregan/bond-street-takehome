@@ -20,11 +20,12 @@
 
 .app {
   margin: 0 auto;
-  max-width: 42rem;
+  max-width: 40rem;
   &__header {
     border-bottom: 1px solid #DFDFDF;
     margin-bottom: 1.7rem;
     padding: 3rem 0 2rem 0;
+    text-align: center;
     h2 {
       font-size: 1.7rem;
       font-weight: 400;
@@ -38,10 +39,22 @@
   flex-direction: row;
   flex-wrap: wrap;
   list-style: none;
-  margin: 0;
+  margin: 2.5rem 0;
   padding: 0;
   &__item {
+    cursor: pointer;
+    padding: 1rem 1rem 1rem 0;
     width: 33%;
+    img {
+      display: block;
+      margin: 0 auto;
+      max-height: 1.7rem;
+      max-width: 7rem;
+      width: 100%;
+    }
   }
 }
 
+.connect, .success {
+  text-align: center;
+}
