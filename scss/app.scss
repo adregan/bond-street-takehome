@@ -58,3 +58,21 @@
 .connect, .success {
   text-align: center;
 }
+
+.modal-container {
+  align-items: baseline;
+  background: rgba(0, 0, 0, .5);
+  display: flex;
+  justify-content: center;
+  position: fixed; top: 0; right: 0; bottom: 0; left: 0;
+}
+
+.modal {
+  background: white;
+  border: 1px solid rgb(49, 51, 48);
+  border-radius: 0.375rem;
+  box-shadow: 0rem .25rem 1.25rem .1rem rgba(49,51,48,1);
+  margin-top: 8rem;
+  min-height: 5rem;
+  width: 45rem;
+}
