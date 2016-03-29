@@ -5,11 +5,13 @@ class Modal extends React.Component {
     super(props);
   }
   render () {
+    const { state, error, loading } = this.prpos;
+    const title = (state === 'login') ? 'Log in to your bank account' : 'Enter your routing and account numbers';
     return (
       <div className="modal-container">
         <article className="modal">
           <header className="modal__header">
-            <h2 className="modal__title"></h2>
+            <h2 className="modal__title">{title}</h2>
             <p className="modal__description">Enter your credentials to link your account</p>
           </header>
           <form className="modal__form">
