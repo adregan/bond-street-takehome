@@ -75,4 +75,48 @@
   margin-top: 8rem;
   min-height: 5rem;
   width: 45rem;
+  &__header {
+    border-bottom: 1px solid #DFDFDF;
+    margin: 1.5rem 1.2rem 0;
+  }
+  &__title, &__description {
+    font-size: .9rem;
+  }
+  &__title {
+    margin: 0;
+  }
+  &__description {
+    margin: .5rem 0;
+  }
+  &__form {
+    margin: .7rem auto 1.2rem;
+    width: 60%;
+  }
+  &__input {
+    background: rgb(244, 245, 241);
+    border: 1px solid rgb(187, 187, 181);
+    display: block;
+    font-size: 1.1rem;
+    margin: .7rem 0;
+    padding: .5rem;
+    width: 100%;
+  }
+  &__error {
+    color: red;
+    font-size: .9rem;
+    margin: 0;
+  }
+  &__submit {
+    background: rgb(85, 165, 228);
+    border: none;
+    color: white;
+    display: block;
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .1rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    text-transform: uppercase;
+    width: 100%;
+  }
 }
