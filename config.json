@@ -1,54 +1,55 @@
 {
   "routes": [
+    "connect",
     "login",
     "routing",
     "success"
   ],
-  "institutions": [
+  "banks": [
     {
       "id": 300,
       "name": "Chase",
-      "imgSrc": "/static/banks/chase.png"
+      "logo": "/static/banks/chase.png"
     },
     {
       "id": 100,
       "name": "Bank of America",
-      "imgSrc": "/static/banks/boa.png"
+      "logo": "/static/banks/boa.png"
     },
     {
       "id": 400,
       "name": "Citi Bank",
-      "imgSrc": "/static/banks/citibank.png"
+      "logo": "/static/banks/citibank.png"
     },
     {
       "id": 900,
       "name": "Wells Fargo",
-      "imgSrc": "/static/banks/wells-fargo.png"
+      "logo": "/static/banks/wells-fargo.png"
     },
     {
       "id": 800,
       "name": "US Bank",
-      "imgSrc": "/static/banks/usbank.png"
+      "logo": "/static/banks/usbank.png"
     },
     {
       "id": 600,
       "name": "PNC Bank",
-      "imgSrc": "/static/banks/pnc.png"
+      "logo": "/static/banks/pnc.png"
     },
     {
       "id": 200,
       "name": "Capital One",
-      "imgSrc": "/static/banks/capitalone.png"
+      "logo": "/static/banks/capitalone.png"
     },
     {
       "id": 700,
       "name": "TD Bank",
-      "imgSrc": "/static/banks/tdbank.png"
+      "logo": "/static/banks/tdbank.png"
     },
     {
       "id": 500,
       "name": "HSBC",
-      "imgSrc": "/static/banks/hsbc.png"
+      "logo": "/static/banks/hsbc.png"
     }
   ]
 }
