@@ -6,12 +6,16 @@ const ConnectToBank = ({ dispatch }) => {
   return (
     <section className="connect">
       <p>Connecting us to your primary business bank account gives us a clearer understanding of your finances.</p>
-      <ul className="bank-list">
+      <ul className="banks-list">
         {institutions.map((institution, i) => {
-          return <li key={i} onClick={() => dispatch(setInstitution(institution.id))}>{institution.name}</li>;
+          return (
+            <li className="banks-list__item" key={i} onClick={() => dispatch(setInstitution(institution.id))}>
+              {institution.name}
+            </li>
+            );
         })}
       </ul>
-    </div>
+    </section>
   );
 };
 
