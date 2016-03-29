@@ -17,3 +17,31 @@
     color: transparent;
   }
 }
+
+.app {
+  margin: 0 auto;
+  max-width: 42rem;
+  &__header {
+    border-bottom: 1px solid #DFDFDF;
+    margin-bottom: 1.7rem;
+    padding: 3rem 0 2rem 0;
+    h2 {
+      font-size: 1.7rem;
+      font-weight: 400;
+      margin: 0;
+    }
+  }
+}
+
+.banks-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  &__item {
+    width: 33%;
+  }
+}
+

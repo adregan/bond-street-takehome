@@ -1,5 +1,4 @@
-$font-stack: "Open Sans", sans-serif;
-$ui-font-stack: "Gotham", sans-serif;
+$font-stack: "Gotham", sans-serif;
 
 @import 'normalize.scss';
 @import 'fonts.scss';
@@ -7,4 +6,4 @@ $ui-font-stack: "Gotham", sans-serif;
 
 * {box-sizing: border-box}
 body {font-family: $font-stack;}
-.ui {font-family: $ui-font-stack;}
+p {line-height: 1.618;}
