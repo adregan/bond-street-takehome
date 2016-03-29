@@ -12,7 +12,7 @@ class Modal extends React.Component {
         <article className="modal">
           <header className="modal__header">
             <h2 className="modal__title">{title}</h2>
-            <p className="modal__description">Enter your credentials to link your account</p>
+            <p className="modal__description">Enter your credentials to link your account.</p>
           </header>
           <form className="modal__form" onSubmit={(e) => e.preventDefault()}>
             {(error !== '') ? <p className="modal__error">{error}</p> : null}
