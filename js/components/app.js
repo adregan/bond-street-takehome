@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { banks } from '../../config';
 import ConnectToBank from './connectToBank';
 import Success from './success';
+import Modal from './modal';
 import { changeRoute } from '../actions';
 
 class App extends React.Component {
@@ -27,6 +28,20 @@ class App extends React.Component {
           switch (route) {
             case 'success':
               return <Success />;
+            case 'login':
+              return (
+                <div>
+                  <Modal state='login' loading={loading} error={error} institution={institution} />
+                  <ConnectToBank banks={banks} dispatch={dispatch} />
+                </div>
+              );
+            case 'routing':
+              return (
+                <div>
+                  <Modal state='routing' loading={loading} error={error} institution={institution} />
+                  <ConnectToBank banks={banks} dispatch={dispatch} />
+                </div>
+              );
             default:
               return <ConnectToBank banks={banks} dispatch={dispatch} />;
           }
