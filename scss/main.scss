@@ -1,0 +1,9 @@
+$font-stack: "Open Sans", sans-serif;
+$ui-font-stack: "Gotham", sans-serif;
+
+@import 'normalize.scss';
+@import 'fonts.scss';
+@import 'app.scss';
+
+* {box-sizing: border-box}
+.ui {font-family: $ui-font-stack;}
