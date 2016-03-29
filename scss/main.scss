@@ -6,4 +6,5 @@ $ui-font-stack: "Gotham", sans-serif;
 @import 'app.scss';
 
 * {box-sizing: border-box}
+body {font-family: $font-stack;}
 .ui {font-family: $ui-font-stack;}
