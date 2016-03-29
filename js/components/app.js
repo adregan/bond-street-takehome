@@ -3,7 +3,13 @@ import { connect } from 'react-redux';
 import ConnectToBank from './connectToBank';
 
 const App = ({dispatch}) => {
-  return <ConnectToBank dispatch={dispatch} />;
+  return (
+    <section className="app">
+      <header className="app__header">
+        <h2>Connect Bond Street to your bank</h2>
+      </header>
+    </section>
+  );
 };
 
 const select = (state) => {
