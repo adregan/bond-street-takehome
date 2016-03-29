@@ -18,7 +18,7 @@ class App extends React.Component {
     });
   }
   render () {
-    const {dispatch, route} = this.props;
+    const { dispatch, route, loading, institution, error } = this.props;
     return (
       <section className="app">
         <header className="app__header">
