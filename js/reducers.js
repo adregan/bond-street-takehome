@@ -1,4 +1,4 @@
-import { SET_INSTITUTION, LOADING, LOADED, CLEAR_ERROR, DISPLAY_ERROR, CHANGE_ROUTE } from './actions';
+import { SET_INSTITUTION, CLEAR_INSTITUTION, LOADING, LOADED, CLEAR_ERROR, DISPLAY_ERROR, CHANGE_ROUTE } from './actions';
 import { combineReducers } from 'redux';
 
 const route = (state = 'connect', action) => {
@@ -32,10 +32,12 @@ const loading = (state = false, action) => {
   }
 };
 
-const institution = (state, action) => {
+const institution = (state = '', action) => {
   switch (action.type) {
     case SET_INSTITUTION:
       return action.id;
+    case CLEAR_INSTITUTION:
+      return '';
     default:
       return state;
   }

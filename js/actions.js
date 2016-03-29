@@ -12,9 +12,13 @@ export const changeRoute = (route) => {
 
 /* INSTITUTION ACTION TYPES & ACTIONS */
 export const SET_INSTITUTION = 'SET_INSTITUTION';
+export const CLEAR_INSTITUTION = 'CLEAR_INSTITUTION';
 
 export const setInstitution = (id) => {
   return {type: SET_INSTITUTION, id};
+};
+export const clearInstitution = () => {
+  return {type: CLEAR_INSTITUTION};
 };
 
 /* LOGIN ERROR ACTION TYPES & ACTIONS */
