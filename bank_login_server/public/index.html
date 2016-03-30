@@ -1,25 +1,16 @@
-<html>
-    <head>
-        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-        <p>Open up your javascript console to see a sample API response</p>
-        <script>
-            $(document).ready(function(){
-                $.ajax({
-                    url: "/bank_login_creds",
-                    method: "POST",
-                    data: {
-                        user_id: "bondstreet",
-                        password: "go"
-                    },
-                    dataType: "json",
-                    success: function(data) {
-                       console.log(data);
-                    }
-                });
-             });
-        </script>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bond Street Takehome: Duncan Regan</title>
+    <link rel="stylesheet" href="/static/index.css">
+</head>
+<body>
+    <nav class="nav-bar">
+        <h1 class="ui logo"><a href="/">Bond Street</a></h1>
+    </nav>
+    <div id="load"></div>
+    <script src="/static/fetch.js"></script>
+    <script src="/static/index.js"></script>
+</body>
 </html>
