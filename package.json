@@ -14,7 +14,7 @@
     "assets": "cp -r assets/* bank_login_server/public/static",
     "prebuild": "npm run directories",
     "build": "npm run js; npm run html; npm run vendor; npm run assets; npm run css",
-    "serve": "node bank_login_server/server.js"
+    "start": "node bank_login_server/server.js"
   },
   "repository": {
     "type": "git",
