@@ -42,10 +42,12 @@ class Modal extends React.Component {
             <h2 className="modal__title">{title}</h2>
             <p className="modal__description">Enter your credentials to link your account.</p>
           </header>
-          <form className="modal__form" onSubmit={(e) => e.preventDefault()}>
+          <form className="modal__form" onSubmit={this.submitForm.bind(this)} encType="application/x-www-form-urlencoded">
             {(error !== '') ? <p className="modal__error">{error}</p> : null}
-            <input className="modal__input" />
-            <button type="submit" className="modal__submit">Continue</button>
+            {this.generateInputs(state, loginFields)}
+            <button type="submit" className={`modal__submit ${(loading) ? 'modal__submit--loading': ''}`} disabled={loading}>
+              {buttonText}
+            </button>
           </form>
         </article>
       </div>
