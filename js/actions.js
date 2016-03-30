@@ -20,6 +20,13 @@ export const clearInstitution = () => {
   return {type: CLEAR_INSTITUTION};
 };
 
+/* LOGIN FIELDS */
+export const SET_FIELDS = 'SET_FIELDS';
+
+export const setLoginFields = (fields) => {
+  return {type: SET_FIELDS, fields};
+};
+
 /* LOGIN ERROR ACTION TYPES & ACTIONS */
 export const CLEAR_ERROR = 'CLEAR_ERROR';
 export const DISPLAY_ERROR = 'DISPLAY_ERROR';
