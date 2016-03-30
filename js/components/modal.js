@@ -1,5 +1,5 @@
 import React from 'react';
-import { logIn, clearError } from '../actions';
+import { logIn, clearError, addRoutingInfo } from '../actions';
 
 class Modal extends React.Component {
   constructor (props) {
@@ -7,12 +7,16 @@ class Modal extends React.Component {
   }
   submitForm (event) {
     event.preventDefault();
-    this.props.dispatch(clearError()); 
+    const { dispatch } = this.props;
+    dispatch(clearError());
     const formData = Array.prototype.filter.call(event.target.elements, el => el.tagName !== 'BUTTON')
       .map(input => `${input.name}=${input.value}`)
       .join('&');
     if (this.props.state === 'login') {
-      this.props.dispatch(logIn(formData));
+      dispatch(logIn(formData));
+    }
+    else {
+      dispatch(addRoutingInfo(formData));
     }
   }
   generateInputs (state, loginFields) {
