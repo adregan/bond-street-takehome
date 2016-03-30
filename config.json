@@ -1,4 +1,8 @@
 {
+  "apiUrl": "http://localhost:3000",
+  "fieldsEndpoint": "bank_login_fields",
+  "loginEndpoint": "bank_login_creds",
+  "genericError": "So sorry. Something went wrong.",
   "routes": [
     "connect",
     "login",
