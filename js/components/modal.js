@@ -1,5 +1,6 @@
 import React from 'react';
 import { logIn, clearError, addRoutingInfo } from '../actions';
+import { isValidRoutingNumber } from '../utils';
 
 class Modal extends React.Component {
   constructor (props) {
