@@ -31,14 +31,14 @@ class App extends React.Component {
             case 'login':
               return (
                 <div>
-                  <Modal state='login' loading={loading} error={error} institution={institution} />
+                  <Modal state='login' {...this.props} />
                   <ConnectToBank banks={banks} dispatch={dispatch} />
                 </div>
               );
             case 'routing':
               return (
                 <div>
-                  <Modal state='routing' loading={loading} error={error} institution={institution} />
+                  <Modal state='routing' {...this.props} />
                   <ConnectToBank banks={banks} dispatch={dispatch} />
                 </div>
               );
@@ -56,7 +56,8 @@ const select = (state) => {
     institution: state.institution,
     route: state.route,
     loading: state.loading,
-    error: state.error
+    error: state.error,
+    loginFields: state.loginFields
   };
 };
 
