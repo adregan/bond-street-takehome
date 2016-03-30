@@ -84,3 +84,15 @@ export const logIn = (formData) => {
       .then(() => dispatch(loaded()));
   };
 };
+
+export const addRoutingInfo = (formData) => {
+  return dispatch => {
+    dispatch(loading());
+    // An API would traditionally go here, mocking one with setTimeout
+    return setTimeout(() => {
+      dispatch(changeRoute('success'));
+      dispatch(loaded());
+    }, 3000);
+  };
+};
+
