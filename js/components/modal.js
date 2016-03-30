@@ -1,5 +1,5 @@
 import React from 'react';
-import { logIn, clearError, addRoutingInfo } from '../actions';
+import { logIn, displayError, clearError, addRoutingInfo } from '../actions';
 import { isValidRoutingNumber } from '../utils';
 
 class Modal extends React.Component {
@@ -16,7 +16,7 @@ class Modal extends React.Component {
       const routingInput = event.target.querySelector('[name=routing_number]');
       const routingNumber = routingInput.value;
       if (!isValidRoutingNumber(routingNumber)) {
-        return routingInput.setCustomValidity('This routing number is not valid.');
+        return dispatch(displayError('This routing number is not valid.'));
       }
     }
 
@@ -44,7 +44,6 @@ class Modal extends React.Component {
           <input required={true} className="modal__input" placeholder="Account Number" name="account_number" />
           <input required={true}
             pattern="\d{9}"
-            step="1"
             maxLength="9"
             minLength="9"
             className="modal__input"
