@@ -213,26 +213,13 @@ var App = function (_React$Component) {
   function App(props) {
     _classCallCheck(this, App);
 
-    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(App).call(this, props));
-
-    _this.componentDidMount = _this.componentDidMount.bind(_this);
-    return _this;
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(App).call(this, props));
   }
 
   _createClass(App, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      window.addEventListener('hashchange', function () {
-        var route = location.hash.replace(/\/|\#/g, '');
-        return _this2.props.dispatch((0, _actions.changeRoute)(route));
-      });
-    }
-  }, {
     key: 'render',
     value: function render() {
-      var _this3 = this;
+      var _this2 = this;
 
       var _props = this.props;
       var dispatch = _props.dispatch;
@@ -261,14 +248,14 @@ var App = function (_React$Component) {
               return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(_modal2.default, _extends({ state: 'login' }, _this3.props)),
+                _react2.default.createElement(_modal2.default, _extends({ state: 'login' }, _this2.props)),
                 _react2.default.createElement(_connectToBank2.default, { banks: _config.banks, dispatch: dispatch })
               );
             case 'routing':
               return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(_modal2.default, _extends({ state: 'routing' }, _this3.props)),
+                _react2.default.createElement(_modal2.default, _extends({ state: 'routing' }, _this2.props)),
                 _react2.default.createElement(_connectToBank2.default, { banks: _config.banks, dispatch: dispatch })
               );
             default:
