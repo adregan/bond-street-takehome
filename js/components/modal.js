@@ -8,11 +8,22 @@ class Modal extends React.Component {
   }
   submitForm (event) {
     event.preventDefault();
-    const { dispatch } = this.props;
+    const { dispatch, state } = this.props;
+
     dispatch(clearError());
+
+    if (state === 'routing') {
+      const routingInput = event.target.querySelector('[name=routing_number]');
+      const routingNumber = routingInput.value;
+      if (!isValidRoutingNumber(routingNumber)) {
+        return routingInput.setCustomValidity('This routing number is not valid.');
+      }
+    }
+
     const formData = Array.prototype.filter.call(event.target.elements, el => el.tagName !== 'BUTTON')
       .map(input => `${input.name}=${input.value}`)
       .join('&');
+
     if (this.props.state === 'login') {
       dispatch(logIn(formData));
     }
@@ -30,8 +41,15 @@ class Modal extends React.Component {
     else {
       return (
         <span>
-          <input className="modal__input" placeholder="Account Number" />
-          <input className="modal__input" placeholder="Routing Number" />
+          <input required={true} className="modal__input" placeholder="Account Number" name="account_number" />
+          <input required={true}
+            pattern="\d{9}"
+            step="1"
+            maxLength="9"
+            minLength="9"
+            className="modal__input"
+            placeholder="Routing Number"
+            name="routing_number" />
         </span>
       );
     }
