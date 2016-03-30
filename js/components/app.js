@@ -9,13 +9,6 @@ import { changeRoute } from '../actions';
 class App extends React.Component {
   constructor (props) {
     super(props);
-    this.componentDidMount = this.componentDidMount.bind(this);
-  }
-  componentDidMount () {
-    window.addEventListener('hashchange', () => {
-      const route = location.hash.replace(/\/|\#/g, '');
-      return this.props.dispatch(changeRoute(route));
-    });
   }
   render () {
     const { dispatch, route, loading, institution, error } = this.props;
