@@ -115,8 +115,22 @@
     font-weight: 700;
     letter-spacing: .1rem;
     margin-top: 2rem;
-    padding: 1rem;
+    padding: 1.2rem 0 .8rem;
     text-transform: uppercase;
     width: 100%;
+    &--loading {
+      background: white;
+      border: 2px solid #DEDEDE;
+      color: #DEDEDE;
+      position: relative;
+      &:before {
+        background-image: url("/static/bst_loader.gif");
+        background-size: 100% 100%;
+        content: '';
+        height: 1.5rem;
+        position: absolute; left: .8rem; top: .8rem;
+        width: 2.2rem;
+      }
+    }
   }
 }
