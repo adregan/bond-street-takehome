@@ -1,10 +1,19 @@
-import { SET_INSTITUTION, CLEAR_INSTITUTION, LOADING, LOADED, CLEAR_ERROR, DISPLAY_ERROR, CHANGE_ROUTE } from './actions';
+import {SET_FIELDS,  SET_INSTITUTION, CLEAR_INSTITUTION, LOADING, LOADED, CLEAR_ERROR, DISPLAY_ERROR, CHANGE_ROUTE } from './actions';
 import { combineReducers } from 'redux';
 
 const route = (state = 'connect', action) => {
   switch (action.type) {
     case CHANGE_ROUTE:
       return action.route;
+    default:
+      return state;
+  }
+};
+
+const loginFields = (state = [], action) => {
+  switch (action.type) {
+    case SET_FIELDS:
+      return action.fields;
     default:
       return state;
   }
@@ -43,4 +52,4 @@ const institution = (state = '', action) => {
   }
 };
 
-export default combineReducers({route, error, loading, institution});
+export default combineReducers({route, error, loading, institution, loginFields});
