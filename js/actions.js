@@ -1,4 +1,4 @@
-import { routes as ROUTES } from '../config';
+import { apiUrl, fieldsEndpoint, loginEndpoint, genericError, routes as ROUTES } from '../config';
 
 /* ROUTE ACTION TYPES & ACTIONS */
 export const CHANGE_ROUTE = 'CHANGE_ROUTE';
@@ -8,7 +8,6 @@ export const changeRoute = (route) => {
     return {type: CHANGE_ROUTE, route};
   }
 };
-
 
 /* INSTITUTION ACTION TYPES & ACTIONS */
 export const SET_INSTITUTION = 'SET_INSTITUTION';
@@ -46,3 +45,35 @@ export const loaded = () => {
   return {type: LOADED};
 };
 
+export const initLogIn = (id) => {
+  return dispatch => {
+    dispatch(setInstitution(id));
+    fetch(`${apiUrl}/${fieldsEndpoint}?institution_id=${id}`)
+      .then(res => res.json())
+      .then(json => dispatch(setLoginFields(json.login_fields)))
+      .then(() => dispatch(changeRoute('login')))
+      .catch(err => console.error(err));
+  };
+};
+
+export const logIn = (formData) => {
+  return dispatch => {
+    dispatch(loading());
+    fetch(`${apiUrl}/${loginEndpoint}`,{
+      method: 'post',
+      body: formData,
+      headers: {'Content-type': 'application/x-www-form-urlencoded'}
+    })
+      .then(res => {
+        res.json().then(body => {
+          if (!res.ok) dispatch(displayError(body.error));
+          else dispatch(changeRoute('routing'));
+        });
+      })
+      .catch(err => {
+        console.error(err);
+        dispatch(displayError(genericError));
+      })
+      .then(() => dispatch(loaded()));
+  };
+};
