@@ -1,5 +1,5 @@
 import React from 'react';
-import { setInstitution } from '../actions';
+import { initLogIn } from '../actions';
 import Bank from './bank';
 
 const ConnectToBank = ({ banks, dispatch }) => {
@@ -8,7 +8,7 @@ const ConnectToBank = ({ banks, dispatch }) => {
       <p>Connecting us to your primary business bank account gives us a clearer understanding of your finances.</p>
       <ul className="banks-list">
         {banks.map((bank, i) => {
-          return <Bank key={i} bank={bank} handleClick={(id) => dispatch(setInstitution(id))} />;
+          return <Bank key={i} bank={bank} handleClick={(id) => dispatch(initLogIn(id))} />;
         })}
       </ul>
     </section>
